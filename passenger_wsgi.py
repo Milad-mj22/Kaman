@@ -1,9 +1,12 @@
-import imp
-import os
+
+
 import sys
+import os
 
+# تنظیم مسیر پروژه
+sys.path.insert(0, '/home/mykamani/Kaman')
 
-sys.path.insert(0, os.path.dirname(__file__))
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Kaman.settings')
 
-wsgi = imp.load_source('wsgi', ' /home/mykamani/Kaman/passenger_wsgi.py')
-application = wsgi. application
+from django.core.wsgi import get_wsgi_application
+application = get_wsgi_application()
