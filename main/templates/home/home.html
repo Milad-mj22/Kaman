@@ -5,7 +5,16 @@
 {% block nav_home_active %}active{% endblock %}
 
 {% block hero %}
-<section class="hero">
+
+{% if  request.session.phone_number %}
+
+  <section class="hero" style="height: 500px;">
+
+    {% else %}
+  <section class="hero" style="height: 350px;">
+    {% endif %}
+
+
   <div class="hero-content">
     <h1>با یک تیر چند نشان بزن!</h1>
     <p>مجموعه ابزارهای حرفه‌ای کمان؛ سامانه هوشمند مدیریت انبار، سفارش، فروش، اتوماسیون، تحلیل مشتریان و داده‌های شما</p>
@@ -32,7 +41,7 @@
     </form>
     {% else %}
         <p>شماره شما قبلاً وارد شده است: {{ request.session.phone_number }}</p>
-    <a href="{% url 'fill_info' %}" class="btn">پر کردن اطلاعات</a>
+    <a href="{% url 'fill_info' %}" class="btn"  style="padding:14px 26px;border-radius:12px;border:none;cursor:pointer;background:linear-gradient(90deg,#ff00c8,#7a00ff);color:#fff;font-size:18px;box-shadow:0 0 10px rgba(255,0,200,.4);transition:.3s;" >ورود / تکمیل اطلاعات</a>
     {% endif %}
   </div>
 </section>
