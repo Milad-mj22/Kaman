@@ -1,0 +1,120 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block title %}تماس با ما | کمان{% endblock %}
+{% block nav_contact_active %}active{% endblock %}
+
+{% block hero %}
+
+
+<section class="hero" style="height: 240px; background-image: linear-gradient(135deg, rgba(255,0,200,.15), rgba(122,0,255,.15)), url('{% static "icons/conatact2.png" %}');">
+  <div class="hero-content">
+    <h1>تماس با ما</h1>
+    <p>همواره آماده پاسخگویی به سوالات و درخواست‌های شما هستیم</p>
+  </div>
+</section>
+
+
+{% endblock %}
+
+{% block content %}
+<section class="contact-section" style="max-width: 1100px; margin: 40px auto 120px; padding: 0 20px; text-align: center;">
+
+  <!-- فرم تماس با ما -->
+  <div class="contact-form" style="background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 24px; margin-bottom: 40px;">
+    <h2 style="color: #fff;">فرم تماس</h2>
+    <form method="POST" action="/submit-contact-form/">
+      {% csrf_token %}
+      <div class="form-group" style="margin-bottom: 16px;">
+        <label for="name" style="color: #fff; display: block;">نام و نام خانوادگی</label>
+        <input type="text" id="name" name="name" required class="phone-input" placeholder="نام خود را وارد کنید" style="width: 80%; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.1); color: #fff;">
+      </div>
+
+      <div class="form-group" style="margin-bottom: 16px;">
+        <label for="email" style="color: #fff; display: block;">ایمیل</label>
+        <input type="email" id="email" name="email" required class="phone-input" placeholder="ایمیل خود را وارد کنید" style="width: 80%; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.1); color: #fff;">
+      </div>
+
+      <div class="form-group" style="margin-bottom: 16px;">
+        <label for="message" style="color: #fff; display: block;">پیام</label>
+        <textarea id="message" name="message" required class="phone-input" placeholder="پیام خود را وارد کنید" style="width: 80%; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.1); color: #fff; height: 150px;"></textarea>
+      </div>
+
+      <button type="submit" class="btn" style="padding: 14px 26px; border-radius: 12px; border: none; cursor: pointer; background: linear-gradient(90deg, #ff00c8, #7a00ff); color: #fff; font-size: 18px; box-shadow: 0 0 10px rgba(255,0,200,.4); transition: .3s;">
+        ارسال پیام
+      </button>
+    </form>
+  </div>
+
+  <!-- اطلاعات تماس -->
+<div class="contact-details" style="display: flex; justify-content: center; gap: 40px; margin-bottom: 40px; flex-wrap: wrap; text-align: right;">
+  <div style="background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 24px; width: 100%; max-width: 400px; text-align: right;">
+    <h2 style="color: #fff; text-align: center;">اطلاعات تماس</h2>
+    <ul style="color: #ddd; line-height: 1.8; padding-right: 20px;">
+      <li><strong>آدرس:</strong> اصفهان ، خیابان ملاصدرا ، کوچه ۱۸</li>
+      <li><strong>تلفن:</strong> ۸۰۰۹ ۱۸۸ ۹۱۳ +۹۸</li>
+      <li><strong>ایمیل:</strong> <a href="mailto:info@kaman.com" style="color: #ff00c8;">info@mykaman.com</a></li>
+      <li><strong>ساعات کاری:</strong> شنبه تا چهارشنبه 9:00 تا 17:00</li>
+    </ul>
+  </div>
+</div>
+
+
+  <!-- نقشه موقعیت -->
+  <div class="map" style="margin-top: 40px;">
+    <h2 style="color: #ffffff;">موقعیت ما</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.1218!2d51.667705!3d32.622041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e19fcb08fbd93%3A0x8c1236d36299be58!2z2KLZiiDZg9in2YXYp9in2K_ZgyDYqPCj!5e0!3m2!1sen!2s!4v1632744372785" width="100%" height="400" style="border: 0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+  /* CSS برای کراپ کردن تصویر */
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+  }
+
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* کراپ کردن تصویر */
+    object-position: center; /* نمایش قسمت مرکزی تصویر */
+  }
+
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    color: white;
+    text-align: center;
+  }
+
+  /* طراحی ریسپانسیو */
+  @media (max-width: 800px) {
+    .contact-section {
+      padding: 0 10px;
+    }
+
+    .contact-details {
+      display: block;
+      justify-content: flex-start;
+    }
+
+    iframe {
+      height: 300px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 90%;
+    }
+  }
+</style>
+{% endblock %}

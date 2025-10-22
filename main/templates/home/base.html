@@ -1,13 +1,14 @@
 {% load static %}
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>کمان | سامانه هوشمند مدیریت</title>
-  <style>
-    :root { --header-h: 74px; }            /* desktop header height */
-    @media (max-width: 800px){ :root { --header-h: 64px; } } /* phone header height */
+  <title>{% block title %}کمان | سامانه هوشمند مدیریت{% endblock %}</title>
 
+  <style>
+    :root { --header-h: 74px; }
+    @media (max-width: 800px){ :root { --header-h: 64px; } }
     html, body { height: 100%; }
     body {
       margin: 0;
@@ -20,7 +21,7 @@
       overflow-x: hidden;
     }
 
-    /* ===================== Smart Top Bar ===================== */
+    /* -------- Header -------- */
     .smart-header {
       position: fixed; top: 0; left: 0; right: 0; width: 100%;
       z-index: 1000;
@@ -30,24 +31,20 @@
       box-shadow: 0 2px 15px rgba(0,0,0,0.3);
       height: var(--header-h);
     }
-
     .nav-container {
       height: 100%;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 ;
+      padding: 0;
       display: grid;
-      grid-template-columns: auto 1fr auto; /* logo | links | toggle */
+      grid-template-columns: auto 1fr auto;
       align-items: center;
       column-gap: 24px;
       position: relative;
     }
-
-    /* RIGHT: Logo */
     .nav-logo {
       display: flex; align-items: center; gap: 10px;
-      justify-self: end;
-      white-space: nowrap;
+      justify-self: end; white-space: nowrap;
     }
     .nav-logo img { width: 42px; filter: drop-shadow(0 0 8px #ff00c8); }
     .nav-logo span {
@@ -56,12 +53,7 @@
       -webkit-background-clip: text; color: transparent;
       letter-spacing: .5px;
     }
-
-    /* CENTER: Links (desktop) */
-    .nav-links {
-      justify-self: center;
-      display: flex; align-items: center; gap: 50px;
-    }
+    .nav-links { justify-self: center; display: flex; align-items: center; gap: 50px; }
     .nav-links a {
       position: relative; text-decoration: none; color: #fff; font-weight: 500; transition: .3s ease;
     }
@@ -72,43 +64,32 @@
     .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
     .nav-links a:hover { color: #ffbdf5; }
 
-    /* LEFT: Hamburger (mobile) */
     .nav-toggle {
       justify-self: start;
       display: none; flex-direction: column; gap: 6px;
       cursor: pointer; background: transparent; border: 0;
-      width: 44px; height: 44px; /* bigger tap area */
-      align-items: center; justify-content: center;
+      width: 44px; height: 44px; align-items: center; justify-content: center;
       padding-left: 50px;
     }
-    .nav-toggle span {
-      display: block;               /* ensures “lines” not dots */
-      width: 26px; height: 2px; background: #fff;
-      border-radius: 2px; transition: .3s;
-    }
+    .nav-toggle span { display:block; width:26px; height:2px; background:#fff; border-radius:2px; transition:.3s; }
     .nav-toggle.active span:nth-child(1){ transform: rotate(45deg) translateY(8px); }
     .nav-toggle.active span:nth-child(2){ opacity: 0; }
     .nav-toggle.active span:nth-child(3){ transform: rotate(-45deg) translateY(-8px); }
 
-    /* Drawer + Backdrop */
-    .drawer { display: none !important; } /* hidden on desktop */
-    .backdrop {
-      position: fixed; inset: 0; background: rgba(0,0,0,.5);
-      z-index: 998; opacity: 0; transition: opacity .25s ease;
-    }
+    .drawer { display: none !important; }
+    .backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 998; opacity: 0; transition: opacity .25s ease; }
     .backdrop.show { opacity: 1; }
     .backdrop[hidden] { display: none; }
 
-    /* Offset for fixed header */
     .page-offset { padding-top: var(--header-h); }
 
-    /* ===================== Hero ===================== */
+    /* -------- Default Hero (overridable) -------- */
     .hero {
       width: 100%;
       display: flex; flex-direction: column; justify-content: center; align-items: center;
       height: 320px; text-align: center; position: relative; overflow: hidden; padding: 0 20px;
       background: url("{% static 'icons/banner.png' %}") no-repeat center center;
-      background-size: 100% 100%;   /* full width/height fill */
+      background-size: 100% 100%;
     }
     .hero::after { content:""; position:absolute; inset:0; background: rgba(0,0,0,.6); }
     .hero-content { position: relative; z-index: 2; max-width: 800px; margin: auto; }
@@ -119,61 +100,25 @@
     }
     .hero p { font-size: 18px; color: #ddd; line-height: 1.8; margin-bottom: 35px; }
 
-    /* ===================== Form ===================== */
-    .phone-form { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
-    .phone-input {
-      padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,.2);
-      background: rgba(255,255,255,.1); color: #fff; font-size: 18px; width: 380px; text-align: center;
-      outline: none; transition: .3s;
-    }
-    .phone-input::placeholder { color:#ccc; }
-    .phone-input:focus { border-color:#ff00c8; box-shadow: 0 0 10px rgba(255,0,200,.4); }
-    .btn {
-      padding: 14px 26px; border-radius: 12px; border: none; cursor: pointer;
-      background: linear-gradient(90deg, #ff00c8, #7a00ff); color:#fff; font-size: 18px;
-      box-shadow: 0 0 10px rgba(255,0,200,.4); transition: .3s;
-    }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 0 20px rgba(255,0,200,.6); }
-
-    /* ===================== Features ===================== */
-    .features { display:flex; justify-content:center; flex-wrap:wrap; gap:40px; padding:80px 60px; background:#110022; }
-    .feature {
-      background: rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); border-radius:20px;
-      padding:40px 20px; text-align:center; width:250px; box-shadow:0 0 20px rgba(120,0,255,.2);
-      transition:.3s;
-    }
-    .feature:hover { transform: translateY(-10px); box-shadow: 0 0 25px rgba(255,0,200,.4); }
-    .feature img { width:60px; margin-bottom:20px; filter: drop-shadow(0 0 8px #ff00c8); }
-    .feature h3 { margin-bottom:10px; color:#fff; }
-    .feature p { font-size:14px; line-height:1.6; color:#ccc; }
-
-    /* ===================== Footer ===================== */
+    /* -------- Footer -------- */
     footer {
-      text-align:center; padding:20px 0; font-size:14px; color:#bbb; background:#0a0015;
+      text-align:center;  font-size:14px; color:#bbb; background:#0a0015;
       position: fixed; bottom:0; left:0; right:0; width:100%; z-index: 10;
+      max-height: 30px;
+      min-height: 30px;
     }
 
-    /* ===================== Responsive ===================== */
+    /* -------- Responsive -------- */
     @media (max-width: 800px) {
-      /* full-width glass with safe-area padding for notches */
       .smart-header { width: 100%; padding-top: env(safe-area-inset-top); }
       .nav-container { max-width: 100%; padding: 0 16px; }
-
-      /* hide center links; show burger */
       .nav-links { display: none; }
       .nav-toggle { display: flex; }
-
-      /* pin burger LEFT, logo RIGHT precisely */
       .nav-toggle { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); }
       .nav-logo   { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); }
-      .nav-logo span { font-size: 24px; }       /* slightly smaller on phone */
+      .nav-logo span { font-size: 24px; }
       .nav-logo img  { width: 36px; }
 
-
-
-
-      
-      /* Drawer: full width */
       .drawer {
         display: flex !important;
         position: fixed; top: 0; left: -100%;
@@ -184,28 +129,23 @@
         padding-bottom: env(safe-area-inset-bottom);
       }
       .drawer.show { left: 0; }
-
-      .drawer a {
-        color:#fff; text-decoration:none; font-size:18px; position:relative;
-      }
+      .drawer a { color:#fff; text-decoration:none; font-size:18px; position:relative; }
       .drawer a::after{
         content:""; position:absolute; bottom:-6px; left:0; height:2px; width:0;
         background: linear-gradient(90deg,#ff00c8,#7a00ff); transition: width .3s; border-radius:2px;
       }
       .drawer a:hover::after { width:100%; }
 
-      /* Footer scrolls on phone to avoid overlap */
-      footer { position: relative; padding: 30px 10px; }
+      footer { position: relative;  }
     }
 
     @media (max-width: 600px){
-      .hero { height:auto; padding: 80px 0; background-size: 100% 100%; }
+      .hero { height:auto; padding: 10px 0; background-size: 100% 100%; }
       .hero h1 { font-size: 28px; margin-bottom: 10px; }
-      .hero p { font-size: 15px; margin-bottom: 25px; }
-      .phone-input, .btn { width: 80%; font-size: 16px; }
-      .features { padding: 50px 20px; gap: 20px; }
-      .feature { width: 100%; max-width: 300px; padding: 30px 15px; }
+      .hero p  { font-size: 15px; margin-bottom: 25px; }
     }
+
+    {% block extra_css %}{% endblock %}
   </style>
 </head>
 <body>
@@ -220,11 +160,11 @@
 
     <!-- CENTER: Menu Links (desktop) -->
     <nav class="nav-links">
-      <a href="#features" class="active">ویژگی‌ها</a>
-      <a href="#products">محصولات</a>
-      <a href="#demo">دمو</a>
-      <a href="#about">درباره ما</a>
-      <a href="#contact">تماس با ما</a>
+      <a href="{% url 'home' %}" class="{% block nav_home_active %}{% endblock %}">خانه</a>
+      <a href="{% url 'products' %}">محصولات</a>
+      <a href="{% url 'demo' %}">دمو</a>
+      <a href="{% url 'about' %}" class="{% block nav_about_active %}{% endblock %}">درباره ما</a>
+      <a href="{% url 'contact' %}">تماس با ما</a>
     </nav>
 
     <!-- LEFT: Hamburger (mobile) -->
@@ -235,56 +175,34 @@
 
   <!-- Drawer + Backdrop -->
   <nav class="drawer" id="drawer" aria-hidden="true">
-    <a href="#features">ویژگی‌ها</a>
-      <a href="#products">محصولات</a>
-    <a href="#demo">دمو</a>
-    <a href="#about">درباره ما</a>
-    <a href="#contact">تماس با ما</a>
+    <a href="{% url 'home' %}">خانه</a>
+    <a href="{% url 'products' %}">محصولات</a>
+    <a href="{% url 'demo' %}">دمو</a>
+    <a href="{% url 'about' %}">درباره ما</a>
+    <a href="{% url 'contact' %}">تماس با ما</a>
   </nav>
   <div class="backdrop" id="backdrop" hidden></div>
 </header>
 
 <main class="page-offset">
+  {% block hero %}
+  <!-- Default hero (صفحات می‌توانند override کنند یا کل این بلاک را حذف کنند) -->
   <section class="hero">
     <div class="hero-content">
       <h1>با یک تیر چند نشان بزن!</h1>
       <p>مجموعه ابزارهای حرفه‌ای کمان؛ سامانه هوشمند مدیریت انبار، سفارش، فروش، اتوماسیون، تحلیل مشتریان و داده‌های شما</p>
-      <form class="phone-form" method="POST" action="/register-phone/">
-        {% csrf_token %}
-        <input type="tel" name="phone" placeholder="شماره موبایل را بزن، همین الان شروع کن"
-               required pattern="^09\\d{9}$" class="phone-input" />
-        <button type="submit" class="btn">ورود به دمو</button>
-      </form>
     </div>
   </section>
+  {% endblock %}
 
-  <section id="features" class="features">
-    <div class="feature">
-      <img src="{% static 'icons/warehouse.png' %}" alt="Warehouse" />
-      <h3>مدیریت انبار</h3>
-      <p>کنترل دقیق موجودی، کاهش خطا و گزارش‌های لحظه‌ای</p>
-    </div>
-    <div class="feature">
-      <img src="{% static 'icons/person2.png' %}" alt="Customer" />
-      <h3>مدیریت مشتریان</h3>
-      <p>ثبت نامحدود مشتریان، شخصی‌سازی ویژگی‌ها، گزارش و تحلیل رفتار مشتریان</p>
-    </div>
-    <div class="feature">
-      <img src="{% static 'icons/increase.png' %}" alt="AI" />
-      <h3>هوش مصنوعی</h3>
-      <p>تحلیل فروش و پیشنهادات هوشمند برای افزایش سود</p>
-    </div>
-    <div class="feature">
-      <img src="{% static 'icons/process.png' %}" alt="Production" />
-      <h3>مدیریت فرایند تولید</h3>
-      <p>مدیریت چرخه تولید، تعریف فرایندها و سطح دسترسی به تمام مراحل</p>
-    </div>
-  </section>
+  {% block content %}{% endblock %}
 </main>
 
+
 <footer>
-  © 2025 کمان - تمامی حقوق محفوظ مجموعه کمان و مشتریان است.
+    کمان - تمامی حقوق محفوظ مجموعه کمان و مشتریان است.
 </footer>
+
 
 <script>
   const toggle   = document.getElementById('navToggle');
@@ -317,5 +235,7 @@
   document.querySelectorAll('#drawer a').forEach(a => a.addEventListener('click', closeDrawer));
   window.addEventListener('resize', () => { if (window.innerWidth > 800) closeDrawer(); });
 </script>
+
+{% block extra_js %}{% endblock %}
 </body>
 </html>
