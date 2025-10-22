@@ -1,0 +1,409 @@
+  File "/home/mykamani/Kaman/passenger_wsgi.py", line 1
+    <<<<<<< HEAD
+    ^^
+SyntaxError: invalid syntax
+  File "/home/mykamani/Kaman/passenger_wsgi.py", line 1
+    <<<<<<< HEAD
+    ^^
+SyntaxError: invalid syntax
+[UID:1539][2130491] Child process with pid: 2130574 was killed by signal: 15, core dumped: no
+  File "/home/mykamani/Kaman/passenger_wsgi.py", line 1
+    <<<<<<< HEAD
+    ^^
+SyntaxError: invalid syntax
+[UID:1539][2130491] Child process with pid: 2130609 was killed by signal: 15, core dumped: no
+  File "/home/mykamani/Kaman/passenger_wsgi.py", line 1
+    <<<<<<< HEAD
+    ^^
+SyntaxError: invalid syntax
+  File "/home/mykamani/Kaman/passenger_wsgi.py", line 1
+    <<<<<<< HEAD
+    ^^
+SyntaxError: invalid syntax
+[UID:1539][2144162] Child process with pid: 2144166 was killed by signal: 15, core dumped: no
+  File "/home/mykamani/Kaman/passenger_wsgi.py", line 1
+    <<<<<<< HEAD
+    ^^
+SyntaxError: invalid syntax
+[UID:1539][2144162] Child process with pid: 2144168 was killed by signal: 15, core dumped: no
+  File "/home/mykamani/Kaman/passenger_wsgi.py", line 13
+    >>>>>>> a24c091db768e37f6bfdad081f91460541575602
+    ^^
+SyntaxError: invalid syntax
+  File "/home/mykamani/Kaman/passenger_wsgi.py", line 13
+    >>>>>>> a24c091db768e37f6bfdad081f91460541575602
+    ^^
+SyntaxError: invalid syntax
+[UID:1539][2171241] Child process with pid: 2171246 was killed by signal: 15, core dumped: no
+  File "/home/mykamani/Kaman/passenger_wsgi.py", line 13
+    >>>>>>> a24c091db768e37f6bfdad081f91460541575602
+    ^^
+SyntaxError: invalid syntax
+[UID:1539][2171241] Child process with pid: 2171249 was killed by signal: 15, core dumped: no
+Invalid HTTP_HOST header: 'mykaman.ir'. You may need to add 'mykaman.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/http/request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'mykaman.ir'. You may need to add 'mykaman.ir' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'mykaman.ir'. You may need to add 'mykaman.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/http/request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'mykaman.ir'. You may need to add 'mykaman.ir' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'mykaman.ir'. You may need to add 'mykaman.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/http/request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'mykaman.ir'. You may need to add 'mykaman.ir' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'mykaman.ir'. You may need to add 'mykaman.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/http/request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'mykaman.ir'. You may need to add 'mykaman.ir' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'mykaman.ir'. You may need to add 'mykaman.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/http/request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'mykaman.ir'. You may need to add 'mykaman.ir' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'mykaman.ir'. You may need to add 'mykaman.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/http/request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'mykaman.ir'. You may need to add 'mykaman.ir' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'mykaman.ir'. You may need to add 'mykaman.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/http/request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'mykaman.ir'. You may need to add 'mykaman.ir' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'mykaman.ir'. You may need to add 'mykaman.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/http/request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'mykaman.ir'. You may need to add 'mykaman.ir' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'mykaman.ir'. You may need to add 'mykaman.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/http/request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'mykaman.ir'. You may need to add 'mykaman.ir' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'mykaman.ir'. You may need to add 'mykaman.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/http/request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'mykaman.ir'. You may need to add 'mykaman.ir' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'mykaman.ir'. You may need to add 'mykaman.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/http/request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'mykaman.ir'. You may need to add 'mykaman.ir' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'mykaman.ir'. You may need to add 'mykaman.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/http/request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'mykaman.ir'. You may need to add 'mykaman.ir' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'mykaman.ir'. You may need to add 'mykaman.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/http/request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'mykaman.ir'. You may need to add 'mykaman.ir' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'mykaman.ir'. You may need to add 'mykaman.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/http/request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'mykaman.ir'. You may need to add 'mykaman.ir' to ALLOWED_HOSTS.
+Not Found: /static/icons/kaman.png
+Not Found: /static/icons/warehouse.png
+Not Found: /static/icons/person2.png
+Not Found: /static/icons/process.png
+Not Found: /static/icons/increase.png
+Not Found: /static/icons/banner.png
+Not Found: /favicon.ico
+Not Found: /static/icons/kaman.png
+Not Found: /static/icons/warehouse.png
+Not Found: /static/icons/person2.png
+Not Found: /static/icons/increase.png
+Not Found: /static/icons/process.png
+Not Found: /static/icons/banner.png
+Not Found: /static/icons/kaman.png
+Not Found: /static/icons/warehouse.png
+Not Found: /static/icons/person2.png
+Not Found: /static/icons/increase.png
+Not Found: /static/icons/banner.png
+Not Found: /static/icons/process.png
+Not Found: /static/icons/kaman.png
+Not Found: /static/icons/warehouse.png
+Not Found: /static/icons/person2.png
+Not Found: /static/icons/increase.png
+Not Found: /static/icons/banner.png
+Not Found: /static/icons/process.png
+Not Found: /static/icons/warehouse.png
+Not Found: /static/icons/kaman.png
+Not Found: /static/icons/process.png
+Not Found: /static/icons/person2.png
+Not Found: /static/icons/banner.png
+Not Found: /static/icons/increase.png
+Not Found: /static/icons/kaman.png
+Not Found: /static/icons/person2.png
+Not Found: /static/icons/process.png
+Not Found: /static/icons/warehouse.png
+Not Found: /static/icons/banner.png
+Not Found: /static/icons/increase.png
+Not Found: /static/icons/kaman.png
+Not Found: /static/icons/warehouse.png
+Not Found: /static/icons/increase.png
+Not Found: /static/icons/person2.png
+Not Found: /static/icons/process.png
+Not Found: /static/icons/banner.png
+Not Found: /static/icons/kaman.png
+Not Found: /static/icons/warehouse.png
+Not Found: /static/icons/person2.png
+Not Found: /static/icons/process.png
+Not Found: /static/icons/increase.png
+Not Found: /static/icons/banner.png
+Not Found: /static/icons/kaman.png
+Not Found: /static/icons/warehouse.png
+Not Found: /static/icons/process.png
+Not Found: /static/icons/banner.png
+Not Found: /static/icons/person2.png
+Not Found: /static/icons/increase.png
+Not Found: /static/icons/kaman.png
+Not Found: /static/icons/warehouse.png
+Not Found: /static/icons/person2.png
+Not Found: /static/icons/increase.png
+Not Found: /static/icons/process.png
+Not Found: /static/icons/banner.png
+Not Found: /static/icons/kaman.png
+Not Found: /static/icons/warehouse.png
+Not Found: /static/icons/banner.png
+Not Found: /static/icons/person2.png
+Not Found: /static/icons/increase.png
+Not Found: /static/icons/process.png
+Not Found: /css/support_parent.css
+Not Found: /js/twint_ch.js
+Not Found: /static/icons/increase.png
+Not Found: /static/icons/warehouse.png
+Not Found: /js/lkk_ch.js
+Not Found: /static/icons/process.png
+Not Found: /static/icons/person2.png
+Not Found: /static/icons/kaman.png
+Not Found: /favicon.ico
+Not Found: /favicon.png
+Not Found: /static/icons/kaman.png
+Not Found: /static/icons/warehouse.png
+Not Found: /static/icons/person2.png
+Not Found: /static/icons/increase.png
+Not Found: /static/icons/process.png
+Not Found: /static/icons/banner.png
+Not Found: /favicon.ico
+Not Found: /ads.txt
+Not Found: /static/icons/kaman.png
+Not Found: /static/icons/warehouse.png
+Not Found: /static/icons/person2.png
+Not Found: /static/icons/increase.png
+Not Found: /static/icons/process.png
+Not Found: /static/icons/banner.png
+Not Found: /static/icons/kaman.png
+Not Found: /static/icons/warehouse.png
+Not Found: /static/icons/increase.png
+Not Found: /static/icons/banner.png
+Not Found: /static/icons/process.png
+Not Found: /static/icons/person2.png
+Not Found: /static/icons/kaman.png
+Not Found: /static/icons/increase.png
+Not Found: /static/icons/process.png
+Not Found: /static/icons/warehouse.png
+Not Found: /static/icons/banner.png
+Not Found: /static/icons/person2.png
+Not Found: /favicon.ico
+Not Found: /.env
+Not Found: /phpinfo
+Not Found: /env/.env
+Not Found: /api/.env
+Not Found: /wp-config
+Not Found: /docker/app/.env
+Not Found: /env.backup
+Not Found: /xampp/phpinfo.php
+Not Found: /lara/info.php
+Not Found: /laravel/info.php
+Not Found: /.vscode/.env
+Not Found: /js/.env
+Not Found: /laravel/.env
+Not Found: /laravel/core/.env
+Not Found: /mail/.env
+Not Found: /mailer/.env
+Not Found: /nginx/.env
+Not Found: /public/.env
+Not Found: /site/.env
+Not Found: /xampp/.env
+Not Found: /main/.env
+Not Found: /node_modules/.env
+Not Found: /kyc/.env
+Not Found: /.env
+Not Found: /api/.env
+Not Found: /config/.env
+Not Found: /.env.example
+Not Found: /.env.production
+Not Found: /.env.dev
+Not Found: /backend/.env
+Not Found: /.env.backup
+Not Found: /_profiler/phpinfo
+Not Found: /phpinfo.php
+Not Found: /phpinfo
+Not Found: /info.php
+Not Found: /test.php
+Not Found: /info
+Not Found: /php.php
+Not Found: /i.php
+Not Found: /test
+Not Found: /phpversion.php
+Not Found: /.env
+Not Found: /api/.env
+Not Found: /config/.env
+Not Found: /.env.example
+Not Found: /.env.production
+Not Found: /.env.dev
+Not Found: /backend/.env
+Not Found: /.env.backup
+Not Found: /_profiler/phpinfo
+Not Found: /phpinfo.php
+Not Found: /phpinfo
+Not Found: /info.php
+Not Found: /test.php
+Not Found: /info
+Not Found: /php.php
+Not Found: /i.php
+Not Found: /test
+Not Found: /phpversion.php
+Not Found: /.env
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /static/icons/kaman.png
+Not Found: /static/icons/warehouse.png
+Not Found: /static/icons/process.png
+Not Found: /static/icons/increase.png
+Not Found: /static/icons/person2.png
+Not Found: /static/icons/banner.png
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /static/icons/kaman.png
+Not Found: /static/icons/warehouse.png
+Not Found: /static/icons/banner.png
+Not Found: /static/icons/increase.png
+Not Found: /static/icons/person2.png
+Not Found: /static/icons/process.png
+Not Found: /static/icons/kaman.png
+Not Found: /static/icons/warehouse.png
+Not Found: /static/icons/banner.png
+Not Found: /static/icons/person2.png
+Not Found: /static/icons/increase.png
+Not Found: /static/icons/process.png
+Not Found: /static/icons/kaman.png
+Not Found: /static/icons/warehouse.png
+Not Found: /static/icons/banner.png
+Not Found: /static/icons/person2.png
+Not Found: /static/icons/increase.png
+Not Found: /static/icons/process.png
+Not Found: /robots.txt
+Not Found: /static/icons/process.png
+Not Found: /static/icons/person2.png
+Not Found: /static/icons/banner.png
+Not Found: /static/icons/kaman.png
+Not Found: /static/icons/increase.png
+Not Found: /static/icons/warehouse.png
+Not Found: /favicon.ico
+Not Found: /static/icons/person2.png
+Not Found: /static/icons/warehouse.png
+Not Found: /static/icons/kaman.png
+Not Found: /static/icons/banner.png
+Not Found: /static/icons/increase.png
+Not Found: /static/icons/process.png
+Not Found: /static/icons/kaman.png
+Not Found: /static/icons/warehouse.png
+Not Found: /static/icons/person2.png
+Not Found: /static/icons/banner.png
+Not Found: /static/icons/increase.png
+Not Found: /static/icons/process.png
+Not Found: /favicon.ico
