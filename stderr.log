@@ -407,3 +407,203 @@ Not Found: /static/icons/banner.png
 Not Found: /static/icons/increase.png
 Not Found: /static/icons/process.png
 Not Found: /favicon.ico
+Not Found: /static/icons/kaman.png
+Not Found: /static/icons/warehouse.png
+Not Found: /static/icons/banner.png
+Not Found: /static/icons/person2.png
+Not Found: /static/icons/increase.png
+Not Found: /static/icons/process.png
+Not Found: /static/icons/kaman.png
+Not Found: /static/icons/warehouse.png
+Not Found: /static/icons/person2.png
+Not Found: /static/icons/banner.png
+Not Found: /static/icons/increase.png
+Not Found: /static/icons/process.png
+Traceback (most recent call last):
+  File "/home/mykamani/Kaman/passenger_wsgi.py", line 12, in <module>
+    application = get_wsgi_application()
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/core/wsgi.py", line 13, in get_wsgi_application
+    return WSGIHandler()
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/core/handlers/wsgi.py", line 118, in __init__
+    self.load_middleware()
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 40, in load_middleware
+    middleware = import_string(middleware_path)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/utils/module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/utils/module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+  File "/opt/alt/python310/lib64/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'whitenoise'
+Traceback (most recent call last):
+  File "/home/mykamani/Kaman/passenger_wsgi.py", line 12, in <module>
+    application = get_wsgi_application()
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/core/wsgi.py", line 13, in get_wsgi_application
+    return WSGIHandler()
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/core/handlers/wsgi.py", line 118, in __init__
+    self.load_middleware()
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 40, in load_middleware
+    middleware = import_string(middleware_path)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/utils/module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "/home/mykamani/virtualenv/Kaman/3.10/lib/python3.10/site-packages/django/utils/module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+  File "/opt/alt/python310/lib64/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'whitenoise'
+[UID:1539][228436] Child process with pid: 228549 was killed by signal: 15, core dumped: no
+Not Found: /apple-touch-icon-precomposed.png
+Not Found: /apple-touch-icon.png
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /apple-touch-icon.png
+Not Found: /apple-touch-icon-precomposed.png
+Not Found: /apple-touch-icon.png
+Not Found: /favicon.ico
+Not Found: /apple-touch-icon-precomposed.png
+Not Found: /payment/index.php
+Not Found: /app/
+Not Found: /login/
+Not Found: /app/
+Not Found: /login/
+Not Found: /app/
+Not Found: /login/
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /wp-includes/wlwmanifest.xml//wp-includes/wlwmanifest.xml
+Not Found: /xmlrpc.php//xmlrpc.php
+Not Found: /blog/wp-includes/wlwmanifest.xml//blog/wp-includes/wlwmanifest.xml
+Not Found: /web/wp-includes/wlwmanifest.xml//web/wp-includes/wlwmanifest.xml
+Not Found: /wordpress/wp-includes/wlwmanifest.xml//wordpress/wp-includes/wlwmanifest.xml
+Not Found: /website/wp-includes/wlwmanifest.xml//website/wp-includes/wlwmanifest.xml
+Not Found: /wp/wp-includes/wlwmanifest.xml//wp/wp-includes/wlwmanifest.xml
+Not Found: /news/wp-includes/wlwmanifest.xml//news/wp-includes/wlwmanifest.xml
+Not Found: /2018/wp-includes/wlwmanifest.xml//2018/wp-includes/wlwmanifest.xml
+Not Found: /2019/wp-includes/wlwmanifest.xml//2019/wp-includes/wlwmanifest.xml
+Not Found: /shop/wp-includes/wlwmanifest.xml//shop/wp-includes/wlwmanifest.xml
+Not Found: /wp1/wp-includes/wlwmanifest.xml//wp1/wp-includes/wlwmanifest.xml
+Not Found: /test/wp-includes/wlwmanifest.xml//test/wp-includes/wlwmanifest.xml
+Not Found: /media/wp-includes/wlwmanifest.xml//media/wp-includes/wlwmanifest.xml
+Not Found: /wp2/wp-includes/wlwmanifest.xml//wp2/wp-includes/wlwmanifest.xml
+Not Found: /site/wp-includes/wlwmanifest.xml//site/wp-includes/wlwmanifest.xml
+Not Found: /cms/wp-includes/wlwmanifest.xml//cms/wp-includes/wlwmanifest.xml
+Not Found: /sito/wp-includes/wlwmanifest.xml//sito/wp-includes/wlwmanifest.xml
+Not Found: /.github/workflows/ci.yml
+Not Found: /.github/workflows/main.yml
+Not Found: /.env
+Not Found: /.env.local
+Not Found: /.env.dev
+Not Found: /.env.prod
+Not Found: /.env.staging
+Not Found: /.env.development
+Not Found: /.env.production
+Not Found: /.env.test
+Not Found: /.env.backup
+Not Found: /.env.example
+Not Found: /.env.sample
+Not Found: /.env.old
+Not Found: /.env.bak
+Not Found: /.env.save
+Not Found: /.env.orig
+Not Found: /.env.swp
+Not Found: /.env~
+Not Found: /.env.tmp
+Not Found: /.env.dist
+Not Found: /.env.json
+Not Found: /.env.yaml
+Not Found: /.env.yml
+Not Found: /.env.php
+Not Found: /.env.secrets
+Not Found: /.env.private
+Not Found: /.env.template
+Not Found: /.env.config
+Not Found: /.env.default
+Not Found: /api/.env
+Not Found: /api/.env.local
+Not Found: /api/.env.bak
+Not Found: /api/.env.old
+Not Found: /app/.env
+Not Found: /app/.env.local
+Not Found: /app/.env.bak
+Not Found: /app/.env.old
+Not Found: /config/.env
+Not Found: /config/.env.local
+Not Found: /config/.env.bak
+Not Found: /config/.env.old
+Not Found: /src/.env
+Not Found: /src/.env.local
+Not Found: /src/.env.bak
+Not Found: /src/.env.old
+Not Found: /public/.env
+Not Found: /public/.env.local
+Not Found: /public/.env.bak
+Not Found: /public/.env.old
+Not Found: /assets/.env
+Not Found: /assets/.env.local
+Not Found: /assets/.env.bak
+Not Found: /assets/.env.old
+Not Found: /includes/.env
+Not Found: /includes/.env.local
+Not Found: /includes/.env.bak
+Not Found: /includes/.env.old
+Not Found: /lib/.env
+Not Found: /lib/.env.local
+Not Found: /lib/.env.bak
+Not Found: /lib/.env.old
+Not Found: /application/.env
+Not Found: /application/.env.local
+Not Found: /application/.env.bak
+Not Found: /application/.env.old
+Not Found: /system/.env
+Not Found: /system/.env.local
+Not Found: /system/.env.bak
+Not Found: /system/.env.old
+Not Found: /core/.env
+Not Found: /core/.env.local
+Not Found: /core/.env.bak
+Not Found: /core/.env.old
+Not Found: /modules/.env
+Not Found: /modules/.env.local
+Not Found: /modules/.env.bak
+Not Found: /modules/.env.old
+Not Found: /plugins/.env
+Not Found: /plugins/.env.local
+Not Found: /plugins/.env.bak
+Not Found: /plugins/.env.old
+Not Found: /themes/.env
+Not Found: /themes/.env.local
+Not Found: /themes/.env.bak
+Not Found: /themes/.env.old
+Not Found: /vendor/.env
+Not Found: /vendor/.env.local
+Not Found: /vendor/.env.bak
+Not Found: /vendor/.env.old
+Not Found: /storage/.env
+Not Found: /storage/.env.local
+Not Found: /storage/.env.bak
+Not Found: /storage/.env.old
+Not Found: /backend/.env
+Not Found: /backend/.env.local
+Not Found: /backend/.env.bak
+Not Found: /backend/.env.old
+Not Found: /frontend/.env
+Not Found: /frontend/.env.local
+Not Found: /frontend/.env.bak
+Not Found: /frontend/.env.old
+Not Found: /favicon.ico
+Not Found: /.env
+Not Found: /favicon.ico
