@@ -1,3 +1,12 @@
 from django.contrib import admin
 
+from main.models import BusinessArea, CompanySize, DemoUser
+
 # Register your models here.
+
+
+admin.site.register(CompanySize)
+
+admin.site.register(BusinessArea)
+
+admin.site.register(DemoUser)

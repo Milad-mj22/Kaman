@@ -1,0 +1,190 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block title %}ثبت نام | کمان{% endblock %}
+
+{% block hero %}
+<section class="hero" style="max-height: 80px; background-image: linear-gradient(135deg, rgba(255,0,200,.15), rgba(122,0,255,.15)), url('{% static "icons/conatact2.png" %}');">
+  <div class="hero-content">
+    <h1>اولین قدم کمانی </h1>
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<section class="form-container">
+  <div class="card">
+    <h1>اطلاعات خود را تکمیل کنید</h1>
+    <p>شماره وارد شده: {{ phone_number }}</p>
+    <form method="POST">
+      {% csrf_token %}
+      <input type="text" name="name" placeholder="نام کامل" required class="phone-input">
+      <input type="text" name="last_name" placeholder="نام خانوادگی" required class="phone-input">
+      <input type="text" name="company_name" placeholder="نام شرکت" required class="phone-input">
+      
+      <select name="company_size" class="dropdown-input" required>
+        <option value="">انتخاب اندازه شرکت</option>
+        {% for size in company_sizes %}
+          <option value="{{ size.id }}">{{ size.size_name }}</option>
+        {% endfor %}
+      </select>
+
+      <select name="business_area" class="dropdown-input" required>
+        <option value="">انتخاب حوزه کاری</option>
+        {% for area in business_areas %}
+          <option value="{{ area.id }}">{{ area.area_name }}</option>
+        {% endfor %}
+      </select>
+
+      <input type="email" name="email" placeholder="ایمیل" required class="phone-input">
+      
+      <button type="submit" class="btn">دریافت کد تایید</button>
+    </form>
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+  test{
+
+  }
+
+  h1{
+    font-size: 28px;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+
+  p {
+    color: #fff;
+    margin-bottom: 30px;
+  }
+
+
+
+  .form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensures it takes at least the full height of the screen */
+  background: rgba(0, 0, 0, 0.3); /* Dark background for contrast */
+}
+
+
+  /* Card Styling */
+  .card {
+    background: rgba(255, 255, 255, 0.1); /* Glass effect */
+    backdrop-filter: blur(10px); /* Blur effect */
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 600px;
+    width: 70%; /* Ensures the card takes full width of the container */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 1%;
+    align-content: center;
+    align-items: center;
+    display: block;
+    margin-top: -160px;
+      backdrop-filter: none; /* Disable this effect for better compatibility on mobile */
+  }
+
+
+
+  /* Input fields */
+  .phone-input {
+    width: 80%;  /* Ensures all inputs and selects have the same width */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+  }
+
+
+  .dropdown-input {
+    width: 80%;  /* Ensures all inputs and selects have the same width */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #000000;
+    font-size: 16px;
+    outline: none;
+  }
+
+
+  /* Select dropdown */
+  select {
+    width: 100%;  /* Ensures selects also have the same width */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+  }
+
+  /* Button styling */
+  .btn {
+    background: linear-gradient(90deg, #ff00c8, #7a00ff);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s ease;
+  }
+
+  .btn:hover {
+    background: linear-gradient(90deg, #7a00ff, #ff00c8);
+    transform: translateY(-2px);
+  }
+
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .card {
+      padding: 30px;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    .phone-input {
+      padding: 10px;
+    }
+
+    .btn {
+      padding: 10px 25px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card {
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 20px;
+    }
+
+    .phone-input {
+      padding: 8px;
+    }
+
+    .btn {
+      padding: 8px 20px;
+    }
+  }
+</style>
+{% endblock %}
