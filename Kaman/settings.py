@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # add right after SecurityMiddleware
 ]
 
 ROOT_URLCONF = 'Kaman.urls'
@@ -133,10 +134,18 @@ MEDIA_URL = '/media/'
 # print('MEDIA_ROOT',MEDIA_ROOT)
 
 
-# Define the directory where static files will be collected
-STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
+# strong caching + hashed filenames
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'   # collected files go here
+
+# If you keep your own static/ folder (besides app-level static/)
+STATICFILES_DIRS = [BASE_DIR / 'static']  # optional
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'           # for user-uploaded files
