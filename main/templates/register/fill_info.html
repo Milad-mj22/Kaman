@@ -18,7 +18,7 @@
     <p>شماره وارد شده: {{ phone_number }}</p>
     <form method="POST">
       {% csrf_token %}
-      <input type="text" name="name" placeholder="نام کامل" required class="phone-input">
+      <input type="text" name="name" placeholder="نام" required class="phone-input">
       <input type="text" name="last_name" placeholder="نام خانوادگی" required class="phone-input">
       <input type="text" name="company_name" placeholder="نام شرکت" required class="phone-input">
       
