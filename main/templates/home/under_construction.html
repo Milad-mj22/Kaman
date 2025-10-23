@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}کمان | سامانه هوشمند مدیریت{% endblock %}</title>
+  <link rel="icon" type="image/png" href="{% static 'icons/icon.png' %}">
+  <link rel="shortcut icon" href="{% static 'favicon.ico' %}" />
+
+  <style>
+    :root { --header-h: 74px; }
+    @media (max-width: 800px){ :root { --header-h: 64px; } }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: 'Vazirmatn', sans-serif;
+      background: radial-gradient(circle at top left, #2b004f, #0a0015);
+      color: #fff;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      min-height: 100vh;
+      overflow-x: hidden;
+      justify-items: center;
+      align-items: center;
+    }
+
+    /* -------- Coming Soon Section -------- */
+    .coming-soon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .coming-soon h1 {
+      font-size: 48px;
+      font-weight: 800;
+      background: linear-gradient(90deg, #ff00c8, #7a00ff);
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 20px;
+      animation: slideUp 3s ease-out;
+    }
+
+    .coming-soon p {
+      font-size: 20px;
+      color: #ddd;
+      line-height: 1.8;
+      margin-bottom: 35px;
+      animation: slideUp 3s ease-out;
+      animation-delay: 0.5s;
+    }
+
+    .coming-soon .timer {
+      font-size: 22px;
+      color: #ff00c8;
+      font-weight: 700;
+      animation: blink 1s infinite alternate;
+    }
+
+    /* Animation for fade-in */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* Slide-up animation */
+    @keyframes slideUp {
+      0% { transform: translateY(30px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Blinking text animation */
+    @keyframes blink {
+      0% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+
+    /* -------- Header -------- */
+    .smart-header {
+      position: fixed; top: 0; left: 0; right: 0; width: 100%;
+      z-index: 1000;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.3);
+      height: var(--header-h);
+    }
+    .nav-container { max-width: 1200px; margin: 0 auto; padding: 0; display: grid; grid-template-columns: auto 1fr auto; align-items: center; }
+    .nav-logo img { width: 42px; filter: drop-shadow(0 0 8px #ff00c8); }
+    .nav-links a { position: relative; text-decoration: none; color: #fff; font-weight: 500; transition: .3s ease; }
+    .nav-toggle { display: none; }
+    .drawer { display: none !important; }
+    .backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 998; opacity: 0; transition: opacity .25s ease; }
+    .page-offset { padding-top: var(--header-h); padding-left: 20px; padding-right: 20px;}
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #ff00c8;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #7a00ff;
+        }
+    /* Responsive */
+    @media (max-width: 800px) { .smart-header { padding-top: env(safe-area-inset-top); } }
+  </style>
+</head>
+<body>
+
+
+
+<main class="page-offset">
+  {% block hero %}
+  <section class="coming-soon">
+    <h1>در دست راه‌اندازی است</h1>
+    <p>وب‌سایت ما به زودی آماده می‌شود!</p>
+    <div class="timer">منتظر بمانید...</div>
+        <a href="/" class="btn">بازگشت به صفحه اصلی</a>
+  </section>
+  {% endblock %}
+  
+  {% block content %}{% endblock %}
+</main>
+
+<footer>
+    کمان - تمامی حقوق محفوظ مجموعه کمان و مشتریان است.
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const drawer = document.getElementById('drawer');
+  const backdrop = document.getElementById('backdrop');
+
+  function openDrawer() {
+    toggle.classList.add('active');
+    drawer.classList.add('show');
+    backdrop.hidden = false;
+    requestAnimationFrame(() => backdrop.classList.add('show'));
+    document.body.style.overflow = 'hidden';
+    toggle.setAttribute('aria-expanded', 'true');
+    drawer.setAttribute('aria-hidden', 'false');
+  }
+  function closeDrawer() {
+    toggle.classList.remove('active');
+    drawer.classList.remove('show');
+    backdrop.classList.remove('show');
+    setTimeout(() => { backdrop.hidden = true; }, 250);
+    document.body.style.overflow = '';
+    toggle.setAttribute('aria-expanded', 'false');
+    drawer.setAttribute('aria-hidden', 'true');
+  }
+
+  toggle.addEventListener('click', () => {
+    drawer.classList.contains('show') ? closeDrawer() : openDrawer();
+  });
+  backdrop.addEventListener('click', closeDrawer);
+  document.querySelectorAll('#drawer a').forEach(a => a.addEventListener('click', closeDrawer));
+  window.addEventListener('resize', () => { if (window.innerWidth > 800) closeDrawer(); });
+</script>
+
+{% block extra_js %}{% endblock %}
+</body>
+</html>

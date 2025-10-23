@@ -71,15 +71,24 @@ def about(request):
 
 def products(request):
     # create a products.html extending base.html similar to about.html
+    ret = under_construction(request,None)
+    return ret
     return render(request, "products.html", {"active": "products"})
 
 def demo(request):
+    ret = under_construction(request,None)
+    return ret
+
     return render(request, "demo.html", {"active": "demo"})
 
 def contact(request):
+
     return render(request, "home/contact.html", {"active": "contact"})
 
 
 
 def custom_page_not_found(request, exception):
     return render(request, '404.html', status=404)
+
+def under_construction(request,details):
+    return render(request, 'home/under_construction.html')
