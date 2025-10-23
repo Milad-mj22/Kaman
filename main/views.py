@@ -1,11 +1,11 @@
 
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.contrib import messages
 # Create your views here.
 from django.shortcuts import render, redirect
 
-from main.forms import DemoUserForm
-from .models import BusinessArea, CompanySize, PhoneLead
+from main.forms import ArticleForm, DemoUserForm
+from .models import Article, BusinessArea, CompanySize, PhoneLead
 from django.utils import timezone
 
 def register_phone(request):
@@ -81,9 +81,19 @@ def demo(request):
 
     return render(request, "demo.html", {"active": "demo"})
 
-def contact(request):
+def videos(request):
+    ret = under_construction(request,None)
+    return ret
 
+    return render(request, "demo.html", {"active": "demo"})
+
+def contact(request):
     return render(request, "home/contact.html", {"active": "contact"})
+
+
+def articles(request):
+    articles = Article.objects.all()  # Fetch all articles from the database
+    return render(request, 'home/articles.html', {'articles': articles})
 
 
 
@@ -92,3 +102,23 @@ def custom_page_not_found(request, exception):
 
 def under_construction(request,details):
     return render(request, 'home/under_construction.html')
+
+
+
+def article_create(request):
+    if request.method == 'POST':
+        form = ArticleForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('articles_page')
+    else:
+        form = ArticleForm()
+    return render(request, 'article_create.html', {'form': form})
+
+
+def article_detail(request, id):
+    # Fetch the article using the provided ID, if it doesn't exist, return a 404 error
+    article = get_object_or_404(Article, id=id)
+
+    # Render the article_detail template and pass the article as context
+    return render(request, 'home/article_details.html', {'article': article})

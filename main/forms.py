@@ -1,6 +1,6 @@
 # forms.py
 from django import forms
-from .models import DemoUser, CompanySize, BusinessArea
+from .models import Article, DemoUser, CompanySize, BusinessArea
 
 class DemoUserForm(forms.ModelForm):
     class Meta:
@@ -10,3 +10,11 @@ class DemoUserForm(forms.ModelForm):
             'company_size': forms.Select(),
             'business_area': forms.Select(),
         }
+
+
+
+
+class ArticleForm(forms.ModelForm):
+    class Meta:
+        model = Article
+        fields = ['title', 'summary', 'content', 'image']

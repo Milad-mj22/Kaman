@@ -1,7 +1,7 @@
 
 from django.urls import path
 
-from .views import register_phone , home
+from .views import articles, register_phone , home, under_construction, videos
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
@@ -31,6 +31,9 @@ urlpatterns = [
     path("contact/", views.contact, name="contact"),
     path('fill-info/', views.fill_info, name='fill_info'),
     path('register-phone/', register_phone, name='register_phone'),
+    path('articles/', articles, name='articles'),
+    path('article/<int:id>/', views.article_detail, name='article_detail'),
+    path('videos/', videos, name='videos'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

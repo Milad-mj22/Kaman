@@ -1,0 +1,31 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block title %}{{ article.title }} | کمان{% endblock %}
+
+{% block hero %}
+
+
+<section class="hero" style="height: 240px; background-image: linear-gradient(135deg, rgba(255,0,200,.15), rgba(122,0,255,.15)), url('{% static "icons/conatact2.png" %}');">
+  <div class="hero-content">
+    <h1>{{ article.title }}</h1>
+
+  </div>
+</section>
+
+
+{% endblock %}
+
+
+{% block content %}
+  <section class="article-detail" style="padding: 40px; background: #2b004f;">
+
+      
+      {% if article.image %}
+        <img src="{{ article.image.url }}" alt="{{ article.title }}" style="width: 50%; height: auto; border-radius: 8px; margin-bottom: 20px; align-content: center;">
+      {% endif %}
+      
+      <p style="font-size: 18px; color: #ddd; line-height: 1.8;">{{ article.content }}</p>
+    </div>
+  </section>
+{% endblock %}

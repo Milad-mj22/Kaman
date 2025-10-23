@@ -41,3 +41,14 @@ class DemoUser(models.Model):
 
     def __str__(self):
         return f"{self.name} {self.last_name}"
+    
+
+class Article(models.Model):
+    title = models.CharField(max_length=200)
+    summary = models.TextField()
+    content = models.TextField()
+    image = models.ImageField(upload_to='articles/', blank=True, null=True)  # Add this line for image
+    published_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
