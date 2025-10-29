@@ -5,72 +5,151 @@
 {% block nav_home_active %}active{% endblock %}
 
 {% block hero %}
-
-{% if  request.session.phone_number %}
-
-  <section class="hero" style="height: 500px;">
-
-    {% else %}
-  <section class="hero" style="height: 350px;">
-    {% endif %}
-
-
+{% if request.session.phone_number %}
+<section class="hero" style="height: 500px;">
+{% else %}
+<section class="hero" style="height: 350px;">
+{% endif %}
   <div class="hero-content">
     <h1>با یک تیر چند نشان بزن!</h1>
-    <p>مجموعه ابزارهای حرفه‌ای کمان؛ سامانه هوشمند مدیریت انبار، سفارش، فروش، اتوماسیون، تحلیل مشتریان و داده‌های شما</p>
-
-
-
-
-
-
-
-
-
+    <p>کمان؛ سامانه هوشمند مدیریت انبار، سفارش، فروش، اتوماسیون، تحلیل مشتریان و داده‌های شما</p>
 
     {% if not request.session.phone_number %}
-    <form class="phone-form" method="POST" action="/register-phone/" style="display:flex;justify-content:center;flex-wrap:wrap;gap:12px;">
+    <form class="phone-form" method="POST" action="/register-phone/"
+          style="display:flex;justify-content:center;flex-wrap:wrap;gap:12px;">
       {% csrf_token %}
       <input type="tel" name="phone" placeholder="شماره موبایل را بزن، همین الان شروع کن"
-             class="phone-input"
-             style="padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.1);color:#fff;font-size:18px;width:380px;text-align:center;outline:none;transition:.3s;">
-      <button type="submit" class="btn"
-              style="padding:14px 26px;border-radius:12px;border:none;cursor:pointer;background:linear-gradient(90deg,#ff00c8,#7a00ff);color:#fff;font-size:18px;box-shadow:0 0 10px rgba(255,0,200,.4);transition:.3s;">
+             style="padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.2);
+                    background:rgba(255,255,255,.1);color:#fff;font-size:18px;width:380px;
+                    text-align:center;outline:none;transition:.3s;">
+      <button type="submit"
+              style="padding:14px 26px;border-radius:12px;border:none;cursor:pointer;
+                     background:linear-gradient(90deg,#ff00c8,#7a00ff);color:#fff;font-size:18px;
+                     box-shadow:0 0 10px rgba(255,0,200,.4);transition:.3s;">
         ورود به دمو
       </button>
     </form>
     {% else %}
-        <p>شماره شما قبلاً وارد شده است: {{ request.session.phone_number }}</p>
-    <a href="{% url 'fill_info' %}" class="btn"  style="padding:14px 26px;border-radius:12px;border:none;cursor:pointer;background:linear-gradient(90deg,#ff00c8,#7a00ff);color:#fff;font-size:18px;box-shadow:0 0 10px rgba(255,0,200,.4);transition:.3s;" >ورود / تکمیل اطلاعات</a>
+      <p>شماره شما قبلاً وارد شده است: {{ request.session.phone_number }}</p>
+      <a href="{% url 'fill_info' %}"
+         style="padding:14px 26px;border-radius:12px;border:none;cursor:pointer;
+                background:linear-gradient(90deg,#ff00c8,#7a00ff);color:#fff;font-size:18px;
+                box-shadow:0 0 10px rgba(255,0,200,.4);transition:.3s;">ورود / تکمیل اطلاعات</a>
     {% endif %}
   </div>
 </section>
 {% endblock %}
 
 {% block content %}
-<section id="features" class="features" style="display:flex;justify-content:center;flex-wrap:wrap;gap:40px;padding:80px 60px;background:#110022;">
-  <div class="feature" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:40px 20px;text-align:center;width:250px;box-shadow:0 0 20px rgba(120,0,255,.2);transition:.3s;">
-    <img src="{% static 'icons/warehouse.png' %}" alt="Warehouse" style="width:60px;margin-bottom:20px;filter: drop-shadow(0 0 8px #ff00c8);" />
+<!-- 🔹 بخش ویژگی‌ها -->
+<section id="features" style="display:flex;justify-content:center;flex-wrap:wrap;gap:40px;
+                padding:80px 60px;background:#110022;">
+  <div class="fade-card">
+    <img src="{% static 'icons/warehouse.png' %}" alt="Warehouse" />
     <h3>مدیریت انبار</h3>
     <p>کنترل دقیق موجودی، کاهش خطا و گزارش‌های لحظه‌ای</p>
   </div>
 
-  <div class="feature" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:40px 20px;text-align:center;width:250px;box-shadow:0 0 20px rgba(120,0,255,.2);transition:.3s;">
-    <img src="{% static 'icons/person2.png' %}" alt="Customer" style="width:60px;margin-bottom:20px;filter: drop-shadow(0 0 8px #ff00c8);" />
+  <div class="fade-card">
+    <img src="{% static 'icons/person2.png' %}" alt="Customer" />
     <h3>مدیریت مشتریان</h3>
     <p>ثبت نامحدود مشتریان، شخصی‌سازی ویژگی‌ها، گزارش و تحلیل رفتار مشتریان</p>
   </div>
 
-  <div class="feature" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:40px 20px;text-align:center;width:250px;box-shadow:0 0 20px rgba(120,0,255,.2);transition:.3s;">
-    <img src="{% static 'icons/increase.png' %}" alt="AI" style="width:60px;margin-bottom:20px;filter: drop-shadow(0 0 8px #ff00c8);" />
+  <div class="fade-card">
+    <img src="{% static 'icons/increase.png' %}" alt="AI" />
     <h3>هوش مصنوعی</h3>
     <p>تحلیل فروش و پیشنهادات هوشمند برای افزایش سود</p>
   </div>
 
-  <div class="feature" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:40px 20px;text-align:center;width:250px;box-shadow:0 0 20px rgba(120,0,255,.2);transition:.3s;">
-    <img src="{% static 'icons/process.png' %}" alt="Production" style="width:60px;margin-bottom:20px;filter: drop-shadow(0 0 8px #ff00c8);" />
+  <div class="fade-card">
+    <img src="{% static 'icons/process.png' %}" alt="Production" />
     <h3>مدیریت فرایند تولید</h3>
     <p>مدیریت چرخه تولید، تعریف فرایندها و سطح دسترسی به تمام مراحل</p>
   </div>
 </section>
+
+<!-- 🔹 بخش: این سامانه به درد چه کسانی می‌خورد -->
+<section id="who-for" style="padding:80px 60px;background:#1b0033;text-align:center;color:white;">
+  <h2 style="font-size:32px;margin-bottom:30px;color:#ff66ff;">کمان برای چه کسب‌وکارهایی ساخته شده؟</h2>
+  <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:40px;max-width:1000px;margin:auto;">
+    <div class="fade-card">
+      <h3>کارخانه‌ها و تولیدکنندگان</h3>
+      <p>برای کنترل خط تولید، مدیریت مواد اولیه و انبار</p>
+
+    </div>
+
+    <div class="fade-card">
+
+
+      <h3>مدیران رستوران و فست‌فود</h3>
+      <p>برای مدیریت مواد اولیه، مدیریت مشتریان ، سفارشات و کنترل دقیق هزینه‌ها</p>
+
+    </div>
+
+    <div class="fade-card">
+      <h3>فروشگاه‌ها و شرکت‌های پخش</h3>
+      <p>برای ثبت سفارش، مدیریت مشتریان و تحلیل فروش</p>
+    </div>
+
+    <div class="fade-card">
+      <h3>کارخانه‌های تولید مصالح ساختمانی</h3>
+      <p> مانند تولیدکنندگان سیمان، آجر و سنگ که به مدیریت مواد اولیه، سفارش‌ها، موجودی و فروش نیاز دارند.</p>
+    </div>
+
+
+    <div class="fade-card">
+      <h3>کسب‌وکارهای در حال رشد</h3>
+      <p>کسب‌وکارهای در حال رشد که به دنبال جایگزینی نرم‌افزارهای پراکنده با یک سامانه هوشمند و ساده هستند.</p>
+    </div>
+
+
+
+  </div>
+</section>
+
+<!-- 🔹 استایل و اسکریپت افکت‌ها -->
+<style>
+  .fade-card {
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 20px;
+    padding: 40px 20px;
+    text-align: center;
+    width: 250px;
+    color: white;
+    box-shadow: 0 0 20px rgba(120,0,255,.2);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+  }
+  .fade-card img {
+    width: 60px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 8px #ff00c8);
+  }
+  .fade-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .fade-card h3 {
+    color: #ff99ff;
+    margin-bottom: 10px;
+  }
+  .fade-card p {
+    opacity: .85;
+  }
+</style>
+
+<script>
+  document.addEventListener("scroll", () => {
+    const cards = document.querySelectorAll(".fade-card");
+    cards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        card.classList.add("visible");
+      }
+    });
+  });
+</script>
 {% endblock %}
